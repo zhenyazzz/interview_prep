@@ -290,6 +290,20 @@ public class OrderService {
 
 ## Полный lifecycle (по шагам)
 
+1 start application
+2 create ApplicationContext
+3 register config classes
+4 component scan
+5 create BeanDefinitions
+6 run BeanFactoryPostProcessors
+7 create BeanPostProcessors
+8 create singleton beans
+    - instantiate
+    - dependency injection
+    - postProcessBeforeInitialization
+    - init methods
+    - postProcessAfterInitialization
+9 beans ready
 1. **Создание BeanDefinition** — конфигурация (XML, @Configuration, component scan) порождает BeanDefinition и регистрирует их в контейнере.
 2. **Instantiation** — контейнер создаёт экземпляр объекта (вызов конструктора или фабричного метода / FactoryBean).
 3. **Dependency injection** — контейнер заполняет поля/сеттеры/конструктор зависимостями (другими beans).
